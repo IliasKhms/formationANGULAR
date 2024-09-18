@@ -1,13 +1,24 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component} from '@angular/core';
+import { SharePicListComponent } from "./share-pic-list/share-pic-list.component";
+import { HeaderComponent } from "./header/header.component";
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [SharePicListComponent, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'picshare';
+
+ 
+  
+
+
+  
+
+
+
+
 }
