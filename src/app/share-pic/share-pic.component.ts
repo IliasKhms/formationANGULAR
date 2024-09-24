@@ -1,6 +1,7 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Pic } from '../models/pic';
 import { NgClass, NgStyle,UpperCasePipe,DatePipe, } from '@angular/common';
+import { SharePicService } from '../services/share-pics.service';
 
 @Component({
   selector: 'app-share-pic',
@@ -22,6 +23,9 @@ export class SharePicComponent implements OnInit {
   buttonText !: string;
   UserHaslike !:boolean;
   
+  constructor(private PicService : SharePicService) { 
+
+  }
 
   ngOnInit() : void{
     this.buttonText = 'Like';
@@ -30,14 +34,17 @@ export class SharePicComponent implements OnInit {
 
   hasLike(): void{
     if(this.UserHaslike){
-      this.pic.likes--;
-      this.buttonText = 'Like';
+     this.PicService.unlikePicById(this.pic.id, 'unlike');
+     this.UserHaslike = false;
+     this.buttonText = 'Like';
     }else{
-      this.pic.likes++;
+      this.PicService.likePicById(this.pic.id, 'like');
+      this.UserHaslike = true;
       this.buttonText = 'Unlike';
     }
-    this.UserHaslike = !this.UserHaslike;
+
   }
+
   
 
 }
