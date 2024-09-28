@@ -1,0 +1,13 @@
+<div class="share-pic-card" [ngClass]="{liked :UserHaslike }">
+    <h2>{{pic.title | uppercase}}</h2>
+    <button [routerLink]="['/picsshare']">BACK</button>
+    @if (pic.location){
+        <p>Location: {{pic.location}}</p>
+    }
+    <img [src]="pic.imageURL" [alt] = "pic.title">
+    <p>{{pic.description}}</p>
+    <p>Created at : {{pic.createdAt |date : "long"}}</p>
+    <button (click)="hasLike()">{{buttonText}}</button>
+    <span [ngStyle]="{color: 'rgb(0,'+pic.likes+',0)'}">{{pic.likes}} 👍</span>
+    
+</div>

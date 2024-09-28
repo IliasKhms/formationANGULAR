@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import { Pic } from '../models/pic';
-import { SharePicComponent } from '../share-pic/share-pic.component';
 import { PicType } from '../models/pic-type.type';
+
 
 @Injectable({
   providedIn: 'root' //enregistre à la racine de l'application pour avoir une seule instance de ce service
@@ -32,6 +32,16 @@ export class SharePicService {
             return [...this.sharePics]; //retourne une copie du tableau mais pas le tableau original
         }
 
+        getPicById(id: string): Pic{
+
+          const foundPic = this.sharePics.find(pic => pic.id === id);
+          if(!foundPic){
+            throw new Error('Pic not found');
+          }
+          return foundPic;
+
+        }
+
         likePicById(id: string, picType : PicType): void{
           const foundPic = this.sharePics.find(pic => pic.id === id);
           if(!foundPic){
@@ -49,5 +59,7 @@ export class SharePicService {
           foundPic.unlike();
           
         }
+
+
           
 }
