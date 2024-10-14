@@ -1,19 +1,11 @@
 import { Component, OnInit} from '@angular/core';
 import { Pic } from '../models/pic';
-import { NgClass, NgStyle,UpperCasePipe,DatePipe, } from '@angular/common';
 import { SharePicService } from '../services/share-pics.service';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-single-share-pic',
-  standalone: true,
-  imports: [
-    NgStyle, 
-    NgClass,
-    UpperCasePipe,
-    DatePipe, 
-    RouterLink
-  ],
+  standalone: false,
   templateUrl: './single-share-pic.component.html',
   styleUrl: './single-share-pic.component.scss'
 })

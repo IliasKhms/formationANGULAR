@@ -1,4 +1,10 @@
 <div class="landing-block">
+  <form #emailForm="ngForm"(ngSubmit)="onSubmitForm(emailForm)" >
+    <label for="emailInput"> Inscrivez-vous pour recevoir notre newsletter !</label>
+    <input type="email" id="emailInput" placeholder={{userEmail}} [(ngModel)]="userEmail" name="userEmail">
+    <button type="submit">S'inscrire</button>
+
+  </form>
     <img src="https://user.oc-static.com/upload/2021/11/11/16366495596929_snapface.png" alt="PicShare logo">
     <div class="landing-links">
       <button (click)="goPicShare()">Continuer vers Snapface</button>

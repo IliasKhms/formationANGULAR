@@ -1,16 +1,10 @@
 import { Component, OnInit,Input } from '@angular/core';
 import { Pic } from '../models/pic';
-import { UpperCasePipe} from '@angular/common';
 import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-share-pic',
-  standalone: true,
-  imports: [
-   
-    UpperCasePipe,
-     
-  ],
+  standalone: false,
   templateUrl: './share-pic.component.html',
   styleUrl: './share-pic.component.scss'
 })

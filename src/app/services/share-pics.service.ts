@@ -60,6 +60,15 @@ export class SharePicService {
           
         }
 
+        addPic(formValue :{title : string, description : string, imageURL : string, location ?: string}): void{
+          const pic = new Pic(formValue.title, formValue.description, new Date(), 0, formValue.imageURL);
+          if(formValue.location){
+            pic.setLocation(formValue.location);
+          }
+          this.sharePics.push(pic);
+
+        }
+
 
           
 }

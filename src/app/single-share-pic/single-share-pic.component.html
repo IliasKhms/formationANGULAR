@@ -1,5 +1,5 @@
 <div class="share-pic-card" [ngClass]="{liked :UserHaslike }">
-    <h2>{{pic.title | uppercase}}</h2>
+    <h2>{{pic.title |uppercase}}</h2>
     <button [routerLink]="['/picsshare']">BACK</button>
     @if (pic.location){
         <p>Location: {{pic.location}}</p>
